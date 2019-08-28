@@ -1,0 +1,57 @@
+$alert-bg:           $light;
+$alert-icon-width:   40px;
+$alert-icon-height:  40px;
+$alert-icon:         #ccc;
+
+.alert{
+  position: relative;
+  width: 100%;
+  padding: $padding-lg-vertical $padding-lg-horizontal;
+  line-height: 1.8;
+  border-radius: $border-radius-lg;
+  background-color: $alert-bg;
+  opacity: 1;
+  @include transition(opacity .15s linear);
+  .close{
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: block;
+    width: $alert-icon-width;
+    height: $alert-icon-height;
+    line-height: $alert-icon-height;
+    text-align: center;
+    font-size: $font-size-h4;
+    font-weight: 100;
+    color: $alert-icon;
+    cursor: pointer;
+    &:hover{
+      color: $brand;
+    }
+  }
+  &.has-icon{
+    padding-left: $alert-icon-width;
+    padding-right: $alert-icon-width;
+    .icon{
+      position: absolute;
+      left: 0;
+      top: 3px;
+      display: block;
+      width: $alert-icon-width;
+      height: $alert-icon-height;
+      line-height: $alert-icon-height;
+      text-align: center;
+    }
+    .iconfont{
+      font-size: $font-size-h4;
+    }
+  }
+  @each $name, $pair in $colors {
+    $color: nth($pair, 1);
+    $background-color: nth($pair, 2);
+    &.is-#{$name} {
+      color: $color;
+      background-color: $background-color;
+    }
+  }
+}

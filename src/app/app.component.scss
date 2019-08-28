@@ -1,0 +1,20 @@
+@import 'src/assets/scss/common.scss';
+.yunnan-ui-view {
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  .yn-menu {
+    .yn-menu-a {
+      display: block;
+      padding: 10px 20px;
+      font-size: 18px;
+      color: #333;
+      cursor: pointer;
+      &:hover {
+        background-color: lighten($brand, 30%);
+      }
+    }
+  }
+}

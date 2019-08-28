@@ -1,0 +1,298 @@
+// @import "parsley";
+
+$input:                     $gray-dark !default;
+$input-background:          $white !default;
+$input-border:              #dbdbdb !default;
+
+$input-hover:               $gray-light !default;
+$input-hover-border:        #b5b5b5 !default;
+
+$input-focus:               $gray-dark !default;
+$input-focus-border:        #b5b5b5 !default;
+
+$input-disabled:            #7a7a7a !default;
+$input-disabled-background: $input-bg-disabled !default;
+$input-disabled-border:     $input-bg-disabled !default;
+
+$input-arrow:               $gray-light !default;
+
+$input-icon:                $gray-light !default;
+$input-icon-active:         $gray-base !default;
+
+$input-radius:              $border-radius !default;
+
+@mixin input {
+  @include control();
+  background-color: $input-background;
+  border: 1px solid $input-border;
+  color: $input;
+  &:hover,
+  &.is-hovered {
+    border-color: $input-hover-border;
+  }
+  &:focus,
+  &.is-focused,
+  &:active,
+  &.is-active {
+    border-color: $input-focus-border;
+  }
+  &[disabled] {
+    background-color: $input-disabled-background;
+    border-color: $input-disabled-border;
+    box-shadow: none;
+    color: $input-disabled;
+    @include placeholder {
+      color: rgba($input, 0.3)
+    }
+  }
+}
+
+.input,
+.textarea {
+  @include input();
+  max-width: 100%;
+  width: 100%;
+  &[type="search"] {
+    border-radius: 290486px;
+  }
+  // Sizes
+  // &.is-small {
+  //    @include control-small();
+  // }
+  // &.is-medium {
+  //    @include control-medium();
+  // }
+  // &.is-large {
+  //   @include control-large();
+  // }
+  // Modifiers
+  &.is-fullwidth {
+    display: block;
+    width: 100%;
+  }
+  &.is-inline {
+    display: inline;
+    width: auto;
+  }
+}
+
+.textarea {
+  display: block;
+  max-height: 600px;
+  max-width: 100%;
+  min-height: 120px;
+  min-width: 100%;
+  padding: 0.625em;
+  resize: vertical;
+}
+
+.checkbox,
+.radio {
+  align-items: center;
+  cursor: pointer;
+  display: inline-flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  line-height: 1.5;
+  position: relative;
+  vertical-align: top;
+  input {
+    cursor: pointer;
+    margin-right: 0.5em;
+  }
+  &:hover {
+    color: $input-hover;
+  }
+  &[disabled] {
+    color: $input-disabled;
+    cursor: not-allowed;
+  }
+}
+
+.radio {
+  & + .radio {
+    margin-left: 0.5em;
+  }
+}
+
+.select {
+  display: inline-block;
+  height: 36px;
+  position: relative;
+  vertical-align: top;
+  &:after {
+    @include arrow($input-arrow);
+    margin-top: -0.375em;
+    right: 1.125em;
+    top: 50%;
+    z-index: 4;
+  }
+  select {
+    @include input();
+    cursor: pointer;
+    display: block;
+    font-size: 1em;
+    outline: none;
+    padding-right: 2.5em;
+    &:hover {
+      border-color: $input-hover-border;
+    }
+    &::-ms-expand {
+      display: none;
+    }
+  }
+  // States
+  &:hover {
+    &:after {
+      border-color: $input-hover;
+    }
+  }
+  // Modifiers
+  &.is-fullwidth {
+    width: 100%;
+    select {
+      width: 100%;
+    }
+  }
+}
+
+.label {
+  color: $input;
+  display: block;
+  font-size: $font-size-base;
+  font-weight: $font-weight-bold;
+  .required{
+    padding: 0 4px;
+    color: $danger;
+  }
+  &:not(:last-child) {
+    margin-bottom: 0.5em;
+  }
+}
+.help {
+  display: block;
+  font-size: $font-size-base;
+  margin-top: 0.25rem;
+}
+.select select {
+  line-height: 1;
+}
+
+// Containers
+
+.field {
+  &:not(:last-child) {
+    margin-bottom: $module-margin;
+  }
+  &.is-grouped {
+    display: flex;
+    justify-content: flex-start;
+    & > .control {
+      flex-basis: 0;
+      flex-shrink: 0;
+      &:not(:last-child) {
+        margin-bottom: 0;
+        margin-right: $module-margin;
+      }
+      &.is-expanded {
+        flex-grow: 1;
+        flex-shrink: 1;
+      }
+    }
+    &.is-grouped-centered {
+      justify-content: center;
+    }
+    &.is-grouped-right {
+      justify-content: flex-end;
+    }
+  };
+  &.is-horizontal {
+    @include tablet {
+      display: flex;
+    }
+  }
+}
+
+.field-label {
+  &.is-normal{
+    padding-top: 5px;
+  }
+  .label {
+    font-size: inherit;
+  }
+  @include mobile {
+    margin-bottom: $module-margin / 2;
+  }
+  @include tablet {
+    flex-basis: 0;
+    flex-grow: 1;
+    flex-shrink: 0;
+    margin-right: $module-margin;
+    text-align: right;
+  }
+}
+
+.field-body {
+  @include tablet {
+    display: flex;
+    flex-basis: 0;
+    flex-grow: 5;
+    flex-shrink: 1;
+    .field {
+      flex-shrink: 1;
+      &:not(.is-narrow) {
+        flex-grow: 1;
+      }
+      &:not(:last-child) {
+        margin-bottom: 0;
+        margin-right: 0.75rem;
+      }
+    }
+  }
+}
+
+.control {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  font-size: $font-size-base;
+  text-align: left;
+  // Modifiers
+  &.has-icon {
+    .icon {
+      position: absolute;
+      top: 0;
+      z-index: 4;
+      align-items: center;
+      display: inline-flex;
+      justify-content: center;
+      width: 36px;
+      height: 36px;
+      pointer-events: none;
+      color: $input-icon;
+    }
+    .input {
+      &:focus {
+        & + .icon {
+          color: $input-icon-active;
+        }
+      }
+    }
+    &:not(.has-icon-right) {
+      .icon {
+        left: 0;
+      }
+      .input {
+        padding-left: 36px;
+      }
+    }
+    &.has-icon-right {
+      .icon {
+        right: 0;
+      }
+      .input {
+        padding-right: 36px;
+      }
+    }
+  }
+}

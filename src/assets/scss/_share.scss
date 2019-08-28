@@ -1,0 +1,125 @@
+$icon-radius:   6px;
+$weibo-bg:      #e6162d;
+$qq-bg:         #56b6e7;
+$wechat-bg:     #00b80c;
+$modal-width:   200px;
+
+.share-title {
+  font-size: $font-size-lg;
+  line-height: 32px;
+}
+.social-share {
+  .iconfont {
+    position:relative;
+    display:inline-block;
+    margin-right: 6px;
+    width: 32px;
+    height: 32px;
+    font-size: 20px;
+    border-radius: $icon-radius;
+    line-height: 32px;
+    color: #fff;
+    text-align: center;
+    vertical-align: middle;
+    transition: background 0.6s ease-out 0s;
+    &:hover{
+      background: #666;
+      color: #fff;
+    }
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  .icon-weibo{
+    background-color: $weibo-bg;
+    &:hover{
+      background: darken($weibo-bg, 15%);
+    }
+  }
+  .icon-qq{
+    background-color: $qq-bg;
+    &:hover{
+      background: darken($qq-bg, 15%);
+    }
+  }
+  .icon-wechat{
+    position:relative;
+    background-color: $wechat-bg;
+    &:hover{
+      background: darken($wechat-bg, 10%);
+      .wechat-qrcode{
+        display: block;
+      }
+    }
+    .wechat-qrcode{
+      position: absolute;
+      z-index: 9;
+      top: -290px;
+      left: -84px;
+      width: $modal-width;
+      display: none;
+      border-radius: 5px;
+      border: 1px solid #ddd;
+      box-shadow: 0 0 20px rgba(0, 0, 0, .2);
+      font-size:12px;
+      font-family: "Tahoma","Helvetica Neue","Lantinghei SC",Arial,"Microsoft Yahei","Hiragino Sans GB",STXihei,Helvetica,sans-serif;
+      text-align:center;
+      color: #484848;
+      background-color: #fff;
+      transition: all 200ms;
+      -webkit-tansition: all 350ms;
+      -moz-transition: all 350ms;
+      &:after,
+      &:before{
+        position: absolute;
+        z-index: 10;
+        content: '';
+        left: 50%;
+        margin-left: -8px;
+        bottom: -16px;
+        width: 0;
+        height: 0;
+        border: 8px solid transparent;
+        border-top-color: #fff;
+      }
+      &:after{
+        z-index: 9;
+        margin-top: -12px;
+        border-top-color: #666;
+      }
+      h4{
+        margin: 0;
+        padding: 4px 0;
+        font-weight: normal;
+        font-size: 16px;
+        border-bottom: 1px solid #e5e5e5;
+        border-radius: 5px 5px 0 0;
+        background-color: #f0f0f0;
+      }
+      .qrcode{
+        margin: 15px auto 10px auto;
+        width: 150px;
+      }
+      .help{
+        padding: 0 10px 10px 10px;
+        line-height: 1.6;
+        font-size: 13px;
+        color: #999;
+      }
+      &.bottom {
+        top: 42px;
+        &:before,
+        &:after {
+          top: -16px;
+          border-top-color: transparent;
+          border-bottom-color: #f0f0f0;
+        }
+        &:after {
+          margin-top: 0;
+          border-bottom-color: #666;
+        }
+      }
+    }
+  }
+}

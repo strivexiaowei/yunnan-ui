@@ -1,0 +1,31 @@
+@import 'src/assets/scss/common.scss';
+.yn-tabs-box {
+  margin: 0;
+  padding: 0 10px;
+  list-style: none;
+  border-bottom: 1px solid #585858;
+  @include clearfix();
+  .yn-tabs-item {
+    float: left;
+    padding-bottom: 10px;
+  }
+
+  .item-tabs-box {
+    display: block;
+    padding: 8px 10px;
+    &:hover {
+      cursor: pointer;
+      background-color: lighten($brand, 60%);
+    }
+  }
+
+  .yn-tabs-btn {
+    float: right;
+    margin-bottom: 10px;
+    padding: 8px 10px;
+    &:hover {
+      cursor: pointer;
+      background-color: lighten($brand, 60%);
+    }
+  }
+}

@@ -1,0 +1,43 @@
+@import 'src/assets/scss/common.scss';
+.yn-button {
+  margin-right: 8px;
+  margin-bottom: 12px;
+  height: 32px;
+  padding: 0 15px;
+  font-size: 14px;
+  border-radius: 4px;
+  cursor: pointer;
+  color: $gray-base;
+  outline: none;
+  border: 1px solid $gray-base;
+  background-color: $white;
+  transition: all .5s;
+  &:hover {
+    color: $brand;
+    border: 1px solid $brand;
+  }
+}
+
+.yn-btn-small {
+  height: 24px;
+  padding: 0 7px;
+  font-size: 14px;
+  border-radius: 4px;
+}
+
+.yn-btn-large {
+  height: 40px;
+  padding: 0 15px;
+  font-size: 16px;
+  border-radius: 4px;
+}
+
+.yn-btn-primary {
+  color: $white;
+  border: 1px solid $brand;
+  background-color: $brand;
+  &:hover {
+    color: $white;
+    background-color: lighten($brand, 20%);
+  }  
+}

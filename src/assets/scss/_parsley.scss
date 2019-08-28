@@ -1,0 +1,19 @@
+select.parsley-error,
+.parsley-error{
+  border-color: lighten($danger, 25%) !important;
+  background-color: lighten($danger, 38%) !important;
+}
+select.parsley-success,
+.parsley-success{
+  border-color: rgba($success, .2) !important;
+  background-color: rgba($success, .1) !important;
+}
+.parsley-errors-list{
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  li{
+    padding-top: 5px;
+    color: $danger;
+  }
+}

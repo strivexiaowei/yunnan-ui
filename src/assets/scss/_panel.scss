@@ -1,0 +1,43 @@
+.panel {
+  @include border-radius($border-radius-sm);
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid #e0e0e0;
+  background-color: $white;
+  .panel-heading,
+  .panel-body,
+  .panel-footer {
+    padding: $module-padding;
+    border-bottom: 1px solid $gray-lighter;
+  }
+  .panel-footer {
+    border-bottom: none;
+  }
+  
+  &.is-rimless {
+    .panel-heading {
+      padding: $module-padding;
+      border-bottom: none;
+      & + .panel-body {
+        padding-top: 0;
+      }
+    }
+    .panel-body {
+      padding: $module-padding;
+      border-bottom: none;
+      & + .panel-footer {
+        padding-top: 0;
+      }
+    }
+    .panel-footer {
+      padding: $module-padding;
+    }
+  }
+  &.is-gapless {
+    .panel-heading,
+    .panel-body,
+    .panel-footer {
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+}
