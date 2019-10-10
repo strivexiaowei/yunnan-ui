@@ -1,0 +1,9 @@
+<section class="search-select-wrap">
+  <markdown [src]="'/assets/doc/search-select/search-select.md'"></markdown>
+  <nz-select style="width: 220px;" nzAllowClear nzShowSearch [nzFilterOption]="_filter" nzPlaceHolder="请选择">
+    <nz-option *ngFor="let option of selectOption"  [nzValue]="option.id" [nzLabel]="option.name"></nz-option>
+  </nz-select>
+  <nz-select style="width: 220px; margin-left: 50px;" nzAllowClear nzShowSearch [nzFilterOption]="_filter" nzMode="multiple" nzPlaceHolder="请选择">
+    <nz-option *ngFor="let option of selectOption"  [nzValue]="option.id" [nzLabel]="option.name"></nz-option>
+  </nz-select>
+</section>

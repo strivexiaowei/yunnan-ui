@@ -21,7 +21,6 @@ export class ButtonComponent implements OnInit {
     this.type = ynType;
   }
   get ynType(): string {
-    console.log(this.type);
     return this.type;
   }
   constructor() { }

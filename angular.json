@@ -28,7 +28,9 @@
             ],
             "styles": [
               "src/styles.scss",
-              "node_modules/prismjs/themes/prism-okaidia.css"
+              "node_modules/prismjs/themes/prism-okaidia.css",
+              "node_modules/ng-zorro-antd/ng-zorro-antd.min.css",
+              "src/assets/styles/theme.less"
             ],
             "scripts": [
               "node_modules/marked/lib/marked.js",

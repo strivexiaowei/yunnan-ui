@@ -1,0 +1,13 @@
+.scratch-card-wrap {
+  padding: 20px;
+
+  .card {
+    width: 375px;
+    height: 140px;
+    background-size: 375px 140px;
+    canvas {
+      width: 375px;
+      height: 140px;
+    }
+  }
+}

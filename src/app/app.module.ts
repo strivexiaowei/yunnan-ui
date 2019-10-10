@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { YunnanUiModule } from './yunnan-ui/yunnan-ui.module';
 import { AngularSplitModule } from 'angular-split';
 import { MarkdownModule, MarkedOptions, MarkedRenderer } from 'ngx-markdown';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 export function markedOptions(): MarkedOptions {
   const renderer = new MarkedRenderer();
 
@@ -14,7 +15,7 @@ export function markedOptions(): MarkedOptions {
   };
 
   return {
-    renderer: renderer,
+    renderer,
     gfm: true,
     tables: true,
     breaks: false,
@@ -32,6 +33,7 @@ export function markedOptions(): MarkedOptions {
   imports: [
     BrowserModule,
     AppRoutingModule,
+    BrowserAnimationsModule,
     YunnanUiModule.forRoot(),
     AngularSplitModule.forRoot(),
     HttpClientModule,
