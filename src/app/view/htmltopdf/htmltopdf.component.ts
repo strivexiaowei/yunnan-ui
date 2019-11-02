@@ -9,7 +9,19 @@ declare var L2Dwidget: any;
 export class HtmltopdfComponent implements OnInit, AfterViewInit  {
   constructor() {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    L2Dwidget.init({
+      pluginRootPath: 'assets/js/live2dw',
+      pluginJsPath: 'lib/',
+      pluginModelPath: 'live2d-widget-model-koharu/assets/',
+      tagMode: false,
+      debug: false,
+      model: { jsonPath: 'assets/js/live2dw/live2d-widget-model-koharu/assets/koharu.model.json' },
+      display: { position: 'right', width: 200, height: 400 },
+      mobile: { show: true },
+      log: false
+    })
+  }
   getPDF() {
     new HtmlToPdf({
       title: '第一个pdf',
@@ -18,16 +30,6 @@ export class HtmltopdfComponent implements OnInit, AfterViewInit  {
   }
 
   ngAfterViewInit() {
-    L2Dwidget.init({
-      pluginRootPath: 'assets/js/live2dw',
-      pluginJsPath: 'lib/',
-      pluginModelPath: 'live2d-widget-model-koharu/assets/',
-      tagMode: false,
-      debug: false,
-      model: { jsonPath: 'assets/js/live2dw/live2d-widget-model-koharu/assets/koharu.model.json' },
-      display: { position: 'right', width: 150, height: 300 },
-      mobile: { show: true },
-      log: false
-    })
+
   }
 }
