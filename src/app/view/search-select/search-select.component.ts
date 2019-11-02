@@ -18,10 +18,9 @@ export class SearchSelectComponent implements OnInit {
     { name: '澳大利亚', id: 'dadshfsjherafaa' },
     { name: '乌克兰', id: 'dadafsfshdfaa' }
   ];
-  constructor() { }
+  constructor() {}
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
   // 拼音搜索
   _filter(input?: string, option?) {
@@ -59,5 +58,10 @@ export class SearchSelectComponent implements OnInit {
       pinyinStr = pinyinStr.replace('--', '-');
     }
     return pinyinStr;
+  }
+
+  scrollBottom() {
+    console.log('hehe');
+    this.selectOption = [...this.selectOption, ...this.selectOption];
   }
 }

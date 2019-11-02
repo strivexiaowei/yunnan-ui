@@ -1,3 +1,4 @@
+import { HtmltopdfComponent } from './htmltopdf/htmltopdf.component';
 import { ScratchCardComponent } from './scratch-card/scratch-card.component'; // 刮刮卡
 import { SearchSelectComponent } from './search-select/search-select.component';
 import { DragScrollComponent } from './drag-scroll/drag-scroll.component';
@@ -6,16 +7,24 @@ import { Routes, RouterModule } from '@angular/router';
 
 const routes: Routes = [
   {
-    path: 'button', component: ButtonComponent
+    path: 'button',
+    component: ButtonComponent
   },
   {
-    path: 'drag-scroll', component: DragScrollComponent
+    path: 'drag-scroll',
+    component: DragScrollComponent
   },
   {
-    path: 'search-select', component: SearchSelectComponent
+    path: 'search-select',
+    component: SearchSelectComponent
   },
   {
-    path: 'scratch-card', component: ScratchCardComponent
+    path: 'scratch-card',
+    component: ScratchCardComponent
+  },
+  {
+    path: 'htmltopdf',
+    component: HtmltopdfComponent
   }
 ];
 

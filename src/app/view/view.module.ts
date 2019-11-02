@@ -1,3 +1,4 @@
+import { HtmltopdfComponent } from './htmltopdf/htmltopdf.component';
 import { ScratchCardComponent } from './scratch-card/scratch-card.component';
 import { SearchSelectComponent } from './search-select/search-select.component';
 import { DragScrollDirective } from './../shared/directives/drag-scroll.directive';
@@ -9,13 +10,17 @@ import { CommonModule } from '@angular/common';
 import { YunnanUiModule } from '../yunnan-ui/yunnan-ui.module';
 import { MarkdownModule, MarkedOptions } from 'ngx-markdown';
 import { NgZorroAntdModule } from 'ng-zorro-antd';
-const COMPONENT = [ // 组件
+
+const COMPONENT = [
+  // 组件
   ButtonComponent,
   DragScrollComponent,
   SearchSelectComponent,
-  ScratchCardComponent
+  ScratchCardComponent,
+  HtmltopdfComponent
 ];
-const DIRECTIVE = [ // 指令
+const DIRECTIVE = [
+  // 指令
   DragScrollDirective
 ];
 @NgModule({
@@ -28,4 +33,4 @@ const DIRECTIVE = [ // 指令
   ],
   declarations: [...COMPONENT, ...DIRECTIVE]
 })
-export class ViewModule { }
+export class ViewModule {}

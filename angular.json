@@ -42,7 +42,8 @@
               "node_modules/prismjs/components/prism-javascript.min.js",
               "node_modules/prismjs/components/prism-markdown.min.js",
               "node_modules/prismjs/components/prism-python.min.js",
-              "node_modules/prismjs/components/prism-typescript.min.js"
+              "node_modules/prismjs/components/prism-typescript.min.js",
+              "src/assets/js/L2Dwidget.min.js"
             ],
             "es5BrowserSupport": true
           },

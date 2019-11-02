@@ -2,17 +2,8 @@
 <section class="yunnan-ui-view">
   <as-split direction="horizontal">
     <as-split-area size="30">
-      <div class="yn-menu">
-        <a class="yn-menu-a" routerLink="/button">Button</a>
-      </div>
-      <div class="yn-menu">
-        <a class="yn-menu-a" routerLink="/drag-scroll">drag-scroll</a>
-      </div>
-      <div class="yn-menu">
-        <a class="yn-menu-a" routerLink="/search-select">search-select</a>
-      </div>
-      <div class="yn-menu">
-        <a class="yn-menu-a" routerLink="/scratch-card">scratch-card</a>
+      <div class="yn-menu" *ngFor="let item of menu">
+        <a class="yn-menu-a" [routerLink]="item.url">{{ item.name }}</a>
       </div>
     </as-split-area>
     <as-split-area size="70">
