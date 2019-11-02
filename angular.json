@@ -43,7 +43,8 @@
               "node_modules/prismjs/components/prism-markdown.min.js",
               "node_modules/prismjs/components/prism-python.min.js",
               "node_modules/prismjs/components/prism-typescript.min.js",
-              "src/assets/js/L2Dwidget.min.js"
+              "src/assets/js/live2dw/lib/L2Dwidget.min.js",
+              "src/assets/js/live2dw/lib/L2Dwidget.0.min.js"
             ],
             "es5BrowserSupport": true
           },

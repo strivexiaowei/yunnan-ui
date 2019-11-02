@@ -7,11 +7,12 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'yunnan-ui';
   menu = [
-    { name: 'Button', url: 'button' },
-    { name: 'Drag-scroll', url: 'drag-scroll' },
-    { name: 'Search-select', url: 'search-select' },
-    { name: 'Scratch-card', url: 'scratch-card' },
-    { name: 'htmltopdf', url: 'htmltopdf' }
+    { name: '按钮', url: 'button' },
+    { name: '滚动和拖拽', url: 'drag-scroll' },
+    { name: '下拉搜索的使用', url: 'search-select' },
+    { name: '刮刮卡', url: 'scratch-card' },
+    { name: 'html转pdf', url: 'htmltopdf' },
+    { name: 'L7-AntV的用法', url: 'l7-antv' }
   ];
   constructor() {}
 }

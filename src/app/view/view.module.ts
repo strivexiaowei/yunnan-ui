@@ -1,3 +1,4 @@
+import { L7AntvComponent } from './l7-antv/l7-antv.component';
 import { HtmltopdfComponent } from './htmltopdf/htmltopdf.component';
 import { ScratchCardComponent } from './scratch-card/scratch-card.component';
 import { SearchSelectComponent } from './search-select/search-select.component';
@@ -17,7 +18,8 @@ const COMPONENT = [
   DragScrollComponent,
   SearchSelectComponent,
   ScratchCardComponent,
-  HtmltopdfComponent
+  HtmltopdfComponent,
+  L7AntvComponent
 ];
 const DIRECTIVE = [
   // 指令

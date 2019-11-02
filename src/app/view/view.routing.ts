@@ -1,3 +1,4 @@
+import { L7AntvComponent } from './l7-antv/l7-antv.component';
 import { HtmltopdfComponent } from './htmltopdf/htmltopdf.component';
 import { ScratchCardComponent } from './scratch-card/scratch-card.component'; // 刮刮卡
 import { SearchSelectComponent } from './search-select/search-select.component';
@@ -25,7 +26,11 @@ const routes: Routes = [
   {
     path: 'htmltopdf',
     component: HtmltopdfComponent
-  }
+  },
+  {
+    path: 'l7-antv',
+    component: L7AntvComponent
+  },
 ];
 
 export const ViewRoutes = RouterModule.forChild(routes);
