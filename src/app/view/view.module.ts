@@ -1,3 +1,4 @@
+import { HttpClientModule } from '@angular/common/http';
 import { L7AntvComponent } from './l7-antv/l7-antv.component';
 import { HtmltopdfComponent } from './htmltopdf/htmltopdf.component';
 import { ScratchCardComponent } from './scratch-card/scratch-card.component';
@@ -11,7 +12,8 @@ import { CommonModule } from '@angular/common';
 import { YunnanUiModule } from '../yunnan-ui/yunnan-ui.module';
 import { MarkdownModule, MarkedOptions } from 'ngx-markdown';
 import { NgZorroAntdModule } from 'ng-zorro-antd';
-
+import { BrowserModule } from '@angular/platform-browser';
+import { RxjsDemoComponent } from './rxjs-demo/rxjs-demo.component';
 const COMPONENT = [
   // 组件
   ButtonComponent,
@@ -19,7 +21,8 @@ const COMPONENT = [
   SearchSelectComponent,
   ScratchCardComponent,
   HtmltopdfComponent,
-  L7AntvComponent
+  L7AntvComponent,
+  RxjsDemoComponent
 ];
 const DIRECTIVE = [
   // 指令
@@ -31,8 +34,10 @@ const DIRECTIVE = [
     ViewRoutes,
     YunnanUiModule,
     NgZorroAntdModule,
+    HttpClientModule,
+    BrowserModule,
     MarkdownModule.forChild()
   ],
   declarations: [...COMPONENT, ...DIRECTIVE]
 })
-export class ViewModule {}
+export class ViewModule { }

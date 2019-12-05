@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import * as L7 from '@antv/l7';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-l7-antv',
@@ -13,11 +14,14 @@ export class L7AntvComponent implements OnInit {
     pitch: undefined,
     lnglat: undefined
   };
-  constructor() {}
+  constructor(
+    private httpClient: HttpClient
+  ) { }
 
   ngOnInit() {
     this.getSimpleness();
     this.getDataoRigin();
+    this.getLineAnimate();
   }
   // 简单入门级
   getSimpleness() {
@@ -30,8 +34,8 @@ export class L7AntvComponent implements OnInit {
       pitch: 0,
       zoom: 12
     });
-    scene.on('loaded', function() {
-      scene.on('mousemove', function(e) {
+    scene.on('loaded', function () {
+      scene.on('mousemove', function (e) {
         console.log('hehe');
         that.mapInfo = {
           zoom: scene.getZoom(),
@@ -92,7 +96,7 @@ export class L7AntvComponent implements OnInit {
       zoom: 11
     });
 
-    scene.on('loaded', function() {
+    scene.on('loaded', function () {
       const data = {
         type: 'FeatureCollection',
         features: [
@@ -193,6 +197,39 @@ export class L7AntvComponent implements OnInit {
         requestAnimationFrame(animateMarker);
       }
       animateMarker(0);
+    });
+  }
+  // 线动画
+  getLineAnimate() {
+    const scene = new L7.Scene({
+      id: 'lineAnimate',
+      mapStyle: 'dark', // 样式URL
+      center: [105.2825, 34.9],
+      pitch: 15,
+      zoom: 4
+    });
+    const that = this;
+    scene.on('loaded', function () {
+      const req = that.httpClient.get('https://gw.alipayobjects.com/os/basement_prod/9f6afbcd-3aec-4a26-bd4a-2276d3439e0d.json');
+      req.subscribe(data => {
+        console.log(data);
+        scene.LineLayer({
+          zIndex: 2
+        }).source(data)
+          .shape('line')
+          .size('value', [1, 4])
+          .color('value', ['#ca0020', '#f4a582', '#f7f7f7', '#92c5de', '#0571b0']
+            .reverse()).animate({
+              enable: true, // 开启动画
+              interval: 0.8, //  0-1 轨迹间隔
+              duration: 2, // 动画时间
+              trailLength: 0.8, // 轨迹长度 0-1
+            })
+          .render();
+        new L7.Marker({
+          color: 'red'
+        }).setLnglat([112, 32]).addTo(scene);
+      })
     });
   }
 }

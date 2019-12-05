@@ -38,6 +38,7 @@
   background-color: $brand;
   &:hover {
     color: $white;
+    border-color: lighten($brand, 20%);
     background-color: lighten($brand, 20%);
   }  
 }
