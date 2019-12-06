@@ -9,6 +9,7 @@ import { Component, OnInit, Input } from '@angular/core';
 export class ButtonComponent implements OnInit {
   private size = 'default';
   private type = 'default';
+  private disabled = false;
   @Input()
   set ynSize(ynSize: string) {
     this.size = ynSize;
@@ -16,12 +17,20 @@ export class ButtonComponent implements OnInit {
   get ynSize(): string {
     return this.size;
   }
+
   @Input()
   set ynType(ynType: string) {
     this.type = ynType;
   }
   get ynType(): string {
     return this.type;
+  }
+  @Input()
+  set yndisabled(yndisabled: boolean) {
+    this.disabled = yndisabled;
+  }
+  get yndisabled(): boolean {
+    return this.disabled;
   }
   constructor() { }
 

@@ -4,9 +4,20 @@
     <yn-button ynType="primary" (click)="getFrom()">from遍历</yn-button>
     <yn-button ynType="primary" (click)="getCreateDom()">create</yn-button>
     <yn-button ynType="primary" (click)="getReduce()">reduce累加</yn-button>
+    <yn-button ynType="primary" (click)="getMapOf()">map of</yn-button>
+    <yn-button ynType="primary" (click)="getFirstOf()">first of</yn-button>
     <yn-button ynType="primary" (click)="getCatch()">catch错误处理</yn-button>
   </div>
   <div class="button-wrap">
-    <yn-button ynType="primary" (click)="getFrom()">subject</yn-button>
+    <yn-button ynType="primary" (click)="getSubject()">subject</yn-button>
+    <yn-button ynType="primary" (click)="getBehaviorSubject()">BehaviorSubject</yn-button>
+    <yn-button ynType="primary" (click)="getPipe($event)">管道pipe</yn-button>
+    <yn-button ynType="primary" [yndisabled]="noClick" (click)="getTake()">{{ paracont }}</yn-button>
   </div>
+  <h3>从Subject共享Observable到多个Subscribers</h3>
+  <input type="text" placeholder="start typing" (input)="mySubject.next($event)" (keyup)="mySubject.next($event)">
+
+  <br> Subscriber to input events got {{inputValue}}
+  <br>
+  <br> Subscriber to keyup events got {{keyValue}}
 </div>
