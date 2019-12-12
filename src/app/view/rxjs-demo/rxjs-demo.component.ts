@@ -7,6 +7,13 @@ import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/filter';
 import { first, map, take, tap } from 'rxjs/operators';
 import { interval } from 'rxjs';
+import 'rxjs/add/observable/timer';
+import 'rxjs/add/operator/mapTo';
+import 'rxjs/add/observable/concat';
+import 'rxjs/add/operator/switchMap';
+import 'rxjs/add/observable/interval';
+import 'rxjs/add/operator/take';
+import 'rxjs/add/operator/mergeMap';
 @Component({
   selector: 'app-rxjs-demo',
   templateUrl: './rxjs-demo.component.html',
@@ -37,8 +44,8 @@ export class RxjsDemoComponent implements OnInit {
     this.mySubject.filter(({ type }) => type === 'input')
       .map(e => (<HTMLInputElement>e.target).value)
       .subscribe(value => this.inputValue = value);
-      this.subject.subscribe({
-        next: v => console.log(`Observer1: ${v}`)
+    this.subject.subscribe({
+      next: v => console.log(`Observer1: ${v}`)
     })
   }
 
@@ -173,4 +180,32 @@ export class RxjsDemoComponent implements OnInit {
     this.subject.next(2);
   }
 
+  getConcat() {
+    const firstReq = Observable.timer(1000).mapTo('First Response');
+    const secondReq = Observable.timer(3000).mapTo('Second Response');
+
+    Observable.concat(firstReq, secondReq)
+      .subscribe(res => console.log(res));
+  }
+
+  getSwitchMap() {
+    // 立即发出值， 然后每5秒发出值
+    const source = Observable.timer(0, 5000);
+    // 当 source 发出值时切换到新的内部 observable，发出新的内部 observable 所发出的值
+    const example = source.switchMap(() => Observable.interval(500));
+    // 输出: 0,1,2,3,4,5,6,7,8,9...0,1,2,3,4,5,6,7,8
+    const subscribe = example.subscribe(val => console.log(val));
+    // const a = Observable.interval(500);
+    // console.log(a);
+  }
+  getSwitchMapMergeMap() {
+    const outer = Observable.interval(1000).take(2);
+    const combined = outer.mergeMap(x => {
+      return Observable.interval(400)
+        .take(3)
+        .map(y => `outer ${x}: inner ${y}`);
+    });
+
+    combined.subscribe(res => console.log(`result ${res}`));
+  }
 }
