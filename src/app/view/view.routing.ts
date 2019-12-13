@@ -6,7 +6,8 @@ import { DragScrollComponent } from './drag-scroll/drag-scroll.component';
 import { ButtonComponent } from './button/button.component';
 import { Routes, RouterModule } from '@angular/router';
 import { RxjsDemoComponent } from './rxjs-demo/rxjs-demo.component';
-
+import { HttpRestClientComponent } from './http-rest-client/http-rest-client.component';
+import { TabsComponent } from './tabs/tabs.component';
 const routes: Routes = [
   {
     path: 'button',
@@ -35,7 +36,15 @@ const routes: Routes = [
   {
     path: 'rxjs-demo',
     component: RxjsDemoComponent
-  }
+  },
+  {
+    path: 'http-rest-client',
+    component: HttpRestClientComponent
+  },
+  {
+    path: 'tabs',
+    component: TabsComponent
+  },
 ];
 
 export const ViewRoutes = RouterModule.forChild(routes);

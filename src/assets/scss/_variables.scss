@@ -215,4 +215,6 @@ $widescreen: 1192px !default;
 // 1344px container + 40
 $fullhd: 1384px !default;
 
+$border-color: #999;
+
 $colors: ("primary": ($primary, $primary-invert), "success": ($success, $success-invert), "warning": ($warning, $warning-invert), "danger": ($danger, $danger-invert)) !default;

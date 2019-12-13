@@ -1,0 +1,39 @@
+@import 'src/assets/scss/common.scss';
+.yn-tabs-wrap {
+  position: relative;
+  overflow: hidden;
+  border-bottom: 1px solid $border-color;
+}
+
+.yn-tab {
+  float: left;
+  height: 40px;
+  padding: 0 16px;
+  margin: 0 2px;
+  line-height: 40px;
+  background-color: lighten($color: $brand, $amount: 40%);
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.pd-ar {
+  padding: 0 32px;
+}
+
+.arrow {
+  position: absolute;
+  top: 0;
+  height: 40px;
+  line-height: 40px;
+  width: 32px;
+  text-align: center;
+  background-color: #fff;
+  cursor: pointer;
+  &.left-arrow {
+    left: 0;
+  }
+
+  &.right-arrow {
+    right: 0;
+  }
+}

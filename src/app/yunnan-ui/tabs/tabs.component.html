@@ -1,0 +1,7 @@
+<div class="yn-tabs-wrap" [ngClass]="{'pd-ar': showArrow}">
+  <div [ngStyle]="{'transform': 'translateX('+ boxDomLeft +'px)'}" class="yn-tabs-box clearfix">
+    <div *ngFor="let item of tabs" class="yn-tab">{{ item }}</div>
+  </div>
+  <span *ngIf="showArrow" (click)="clickArrow('left')" class="arrow left-arrow"><</span>
+  <span *ngIf="showArrow" (click)="clickArrow('right')" class="arrow right-arrow">></span>
+</div>

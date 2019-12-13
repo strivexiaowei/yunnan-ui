@@ -14,15 +14,19 @@ import { MarkdownModule, MarkedOptions } from 'ngx-markdown';
 import { NgZorroAntdModule } from 'ng-zorro-antd';
 import { BrowserModule } from '@angular/platform-browser';
 import { RxjsDemoComponent } from './rxjs-demo/rxjs-demo.component';
+import { HttpRestClientComponent } from './http-rest-client/http-rest-client.component';
+import { TabsComponent } from './tabs/tabs.component';
 const COMPONENT = [
   // 组件
+  TabsComponent,
   ButtonComponent,
   DragScrollComponent,
   SearchSelectComponent,
   ScratchCardComponent,
   HtmltopdfComponent,
   L7AntvComponent,
-  RxjsDemoComponent
+  RxjsDemoComponent,
+  HttpRestClientComponent
 ];
 const DIRECTIVE = [
   // 指令
