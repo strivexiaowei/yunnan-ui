@@ -16,6 +16,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { RxjsDemoComponent } from './rxjs-demo/rxjs-demo.component';
 import { HttpRestClientComponent } from './http-rest-client/http-rest-client.component';
 import { TabsComponent } from './tabs/tabs.component';
+import { BserqxComponent } from './bserqx/bserqx.component';
+import { TypescriptComponent } from './typescript/typescript.component';
 const COMPONENT = [
   // 组件
   TabsComponent,
@@ -26,7 +28,9 @@ const COMPONENT = [
   HtmltopdfComponent,
   L7AntvComponent,
   RxjsDemoComponent,
-  HttpRestClientComponent
+  HttpRestClientComponent,
+  BserqxComponent,
+  TypescriptComponent
 ];
 const DIRECTIVE = [
   // 指令

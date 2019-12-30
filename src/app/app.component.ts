@@ -17,7 +17,9 @@ export class AppComponent implements OnInit {
     { name: 'L7-AntV的用法', url: 'l7-antv' },
     { name: 'rxjs的使用', url: 'rxjs-demo' },
     { name: 'http服务在封装', url: 'http-rest-client' },
-    { name: 'tabs导航', url: 'tabs' }
+    { name: 'tabs导航', url: 'tabs' },
+    { name: '贝塞尔曲线', url: 'bserqx' },
+    { name: 'typescript', url: 'typescript' }
   ];
   constructor() {}
   ngOnInit () {

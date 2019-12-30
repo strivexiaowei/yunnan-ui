@@ -8,6 +8,8 @@ import { Routes, RouterModule } from '@angular/router';
 import { RxjsDemoComponent } from './rxjs-demo/rxjs-demo.component';
 import { HttpRestClientComponent } from './http-rest-client/http-rest-client.component';
 import { TabsComponent } from './tabs/tabs.component';
+import { BserqxComponent } from './bserqx/bserqx.component';
+import { TypescriptComponent } from './typescript/typescript.component';
 const routes: Routes = [
   {
     path: 'button',
@@ -45,6 +47,14 @@ const routes: Routes = [
     path: 'tabs',
     component: TabsComponent
   },
+  {
+    path: 'bserqx',
+    component: BserqxComponent
+  },
+  {
+    path: 'typescript',
+    component: TypescriptComponent
+  }
 ];
 
 export const ViewRoutes = RouterModule.forChild(routes);
